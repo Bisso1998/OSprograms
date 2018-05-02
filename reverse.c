@@ -16,7 +16,7 @@ int main()
 		read(readFile,buff,1);
 		printf("%s\n", buff);
 		write(writeFile,buff,1);
-		 lseek(readFile, -2, SEEK_CUR); 
+		lseek(readFile, -2, SEEK_CUR); 
 		c--;
 	}
 printf("DONE\n");

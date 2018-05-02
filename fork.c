@@ -5,10 +5,25 @@
 void main()
 {
     int a, b;
-    b=fork(); // <-- current line of execution: 0 is returned to b
-    printf("\nmy name is manish\n");
-    printf("\n my name is anil\n");
-    printf("\n the value of b = %d",b);
+	printf("[Current Process] %d\n", getpid() );
+	if(fork()==0)
+	{
+		printf("[child] %d [parent] %d \n",getpid(),getppid() );
+		if(fork()==0)
+		{
+		printf("[child] %d [parent] %d \n",getpid(),getppid() );
+		if(fork()==0)
+		{
+		printf("[child] %d [parent] %d \n",getpid(),getppid() );
+		if (fork()==0)
+		{
+			/* code */
+		printf("[child] %d [parent] %d \n",getpid(),getppid() );
+			
+		}
+		}
+		}
+	}    
 }
 
 // what the parent process looks like after fork is called
